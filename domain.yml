@@ -1,0 +1,41 @@
+version: "3.1"
+
+intents:
+  - greet
+  - goodbye
+  - thanks
+  - inform_package_status
+  - inform_delivery_date
+  - inform_missing_item
+
+entities:
+  - package_number
+  - delivery_date
+  - item_name
+
+slots:
+  package_number:
+    type: unfeaturized
+  delivery_date:
+    type: unfeaturized
+  item_name:
+    type: unfeaturized
+
+responses:
+  utter_greet:
+    - text: "Hello! How can I assist you today?"
+
+  utter_goodbye:
+    - text: "Goodbye! Have a great day."
+
+  utter_thanks:
+    - text: "You're welcome! Let me know if there's anything else I can help with."
+
+  utter_package_status:
+    - text: "The status of your package {package_number} is {status}."
+
+  utter_delivery_date:
+    - text: "The estimated delivery date for your package {package_number} is {delivery_date}."
+
+  utter_missing_item:
+    - text: "I'm sorry to hear that {item_name} is missing from your package {package_number}. We will investigate this issue and get back to you shortly."

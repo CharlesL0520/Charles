@@ -1,0 +1,93 @@
+version: "3.1"
+
+nlu:
+- intent: greet
+  examples: |
+    - Hi
+    - Hello
+    - Hey
+
+- intent: goodbye
+  examples: |
+    - Bye
+    - Goodbye
+    - See you later
+
+- intent: thanks
+  examples: |
+    - Thank you
+    - Thanks a lot
+    - I appreciate it
+
+- intent: inform_package_status
+  examples: |
+    - What's the status of my package {package_number}?
+    - Can you check the status of my delivery?
+
+- intent: inform_delivery_date
+  examples: |
+    - When will my package {package_number} be delivered?
+    - What is the estimated delivery date for my order?
+
+- intent: inform_missing_item
+  examples: |
+    - I received my package {package_number}, but {item_name} is missing.
+    - There's a missing item {item_name} from my order.
+
+- intent: QaS
+- Q: What services does your logistics company offer?
+  A: Our logistics company offers a wide range of services, including transportation, warehousing, inventory management, order fulfillment, and supply chain management. We work with businesses of all sizes to provide customized logistics solutions that meet their unique needs.
+
+- Q: How can I track my shipment?
+  A: You can track your shipment by logging into your account on our website and entering your shipment tracking number. You can also contact our customer support team for assistance with tracking your shipment.
+
+- Q: How long will it take for my shipment to arrive?
+  A: The delivery time for your shipment will depend on several factors, including the shipping method you choose, the distance your shipment needs to travel, and any customs or clearance procedures that may be required. We will provide you with an estimated delivery date when you place your order, and we will do our best to ensure that your shipment arrives on time.
+
+- Q: How do I place an order for shipping?
+  A: You can place an order for shipping by logging into your account on our website and selecting the shipping service that best meets your needs. You can then enter your shipment details and pay for your order online.
+
+- Q: Can I ship internationally?
+  A: Yes, we offer international shipping services to many countries around the world. However, please note that international shipping may be subject to customs and clearance procedures, which can cause delays in delivery.
+
+- Q: What if my shipment is lost or damaged?
+  A: If your shipment is lost or damaged, please contact our customer support team immediately. We will work with you to investigate the issue and determine the best course of action to resolve the problem.
+
+- Q: How do I cancel or modify my shipment?
+  A: To cancel or modify your shipment, please contact our customer support team as soon as possible. We will do our best to accommodate your request, but please note that cancellation or modification may not be possible once your shipment has been picked up by our carrier.
+
+- Q: Where is my package?
+  A: Track Number, please
+
+- Q: Can you tell me the status of my shipment?
+  A: Track Number, please
+
+- Q: When will my package arrive?
+  A: Track Number please
+
+- Q: What's the latest update on my shipment?
+  A: Track Number, please
+
+- Q: I want to schedule a delivery for tomorrow.
+  A: Please visit the Order history page and select the item you wish to schedule.
+
+- Q: When can you deliver my package?
+  A: Please visit the Order history page and select the item you wish to schedule.
+
+- Q: How can I schedule a delivery?
+  A: Please visit the Order history page and select the item you wish to schedule.
+
+- Q: What are the available delivery slots for next week?
+  A: Please visit the Order history page and select the order you wish to schedule.
+
+- Q: I want to cancel my shipment.
+  A: Tracking Number
+
+- Q: How can I cancel my order?
+  A: Tracking Number
+
+- Q: Can you help me cancel my shipment?
+  A: Tracking Number
+
+- Q: Is it possible to cancel my package delivery?
+  A: Tracking Number

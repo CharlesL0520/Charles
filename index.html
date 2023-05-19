@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Logistics Chatbot</title>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+<body>
+  <div id="chat-container"></div>
+  <input id="user-input" type="text" placeholder="Enter your message..." onkeydown="if(event.keyCode==13) sendMessage()" autofocus/>
+</body>
+<script>
+  const chatContainer = document.getElementById("chat-container");
+  const userInput = document.getElementById("user-input");
+
+  function sendMessage() {
+    const message = userInput.value;
+    if (message.trim() !== "") {
+      addMessage("user", message);
+      userInput.value = "";
+
+      axios.post("http://localhost:5005/webhooks/rest/webhook", {
+        message: message,
+      })
+      .then((response) => {
+        const botReply = response.data[0].text;
+        addMessage("bot", botReply);
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+    }
+  }
+
+  function addMessage(sender, message) {
+    const messageElement = document.createElement("div");
+    messageElement.classList.add("message");
+    messageElement.classList.add(sender);
+
+    const messageText = document.createElement("span");
+    messageText.innerHTML = message;
+
+    messageElement.appendChild(messageText);
+    chatContainer.appendChild(messageElement);
+  }
+</script>
+<style>
+  .message {
+    margin: 10px;
+    padding: 10px;
+    border-radius: 5px;
+  }
+  .user {
+    background-color: #f0f0f0;
+  }
+  .bot {
+    background-color: #e0e0e0;
+  }
+</style>
+</html>
